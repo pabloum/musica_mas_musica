@@ -1,0 +1,23 @@
+<h1>Artistas en la tabla</h1>
+<p>These are the most famous artists</p>
+
+
+<div class="container">
+  <div class="row">
+
+    <% @artists.each do |artist| %>
+
+    <div class="col-3">
+      <div class="card" style="width: 18rem;">
+        <img src="<%=artist.image_url%>" alt="foto" height="260" width="260">
+        <div class="body">
+          <h4><%= artist.name %></h4>
+        </div>
+        <%= link_to 'See More', artist_id_path(artist)%>
+      </div>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>
